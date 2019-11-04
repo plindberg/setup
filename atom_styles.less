@@ -1,0 +1,52 @@
+@import "colors.less";
+
+// https://github.com/atom/one-light-syntax/blob/master/styles/colors.less
+// https://github.com/atom/one-light-syntax/blob/master/styles/syntax-variables.less
+// https://github.com/atom/one-light-syntax/blob/master/styles/syntax/_base.less
+
+atom-text-editor {
+  .syntax--keyword,
+  .syntax--storage,
+  .syntax--variable,
+  .syntax--constant,
+  .syntax--name,
+  .syntax--type,
+  .syntax--class,
+  .syntax--function,
+  .syntax--string {
+    color: @syntax-fg !important;
+  }
+
+  .syntax--type + .syntax--name,
+  .syntax--type + .syntax--class,
+  .syntax--storage + .syntax--class {
+    font-weight: bolder;
+  }
+
+  .syntax--sql .syntax--keyword {
+    color: @hue-1 !important;
+  }
+
+  .syntax--comment {
+    color: @hue-5 !important;
+  }
+
+  .syntax--docstring,
+  .syntax--docstring .syntax--punctuation.syntax--begin,
+  .syntax--docstring .syntax--punctuation.syntax--end {
+    color: @hue-5 !important;
+    // color: fade(@syntax-fg, 60%) !important;
+  }
+
+  .syntax--source {
+    font-variant-numeric: slashed-zero oldstyle-nums;
+  }
+
+  .indent-guide {
+    box-shadow: inset 1px 0 fade(@syntax-fg, 5%)
+  }
+}
+
+.results-view {
+  font-variant-numeric: slashed-zero oldstyle-nums;
+}
